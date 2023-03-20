@@ -12,3 +12,5 @@ To ensure a smooth user experience, the application includes a loading state whe
 Used React router for navigation also used context api to store information regarding a list of top trending movies.
 
 Also added pagination allowing user to browse through movies.
+
+Created Modal for the login function using ReactDom's create Portal method
