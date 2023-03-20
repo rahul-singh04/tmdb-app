@@ -1,17 +1,12 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: #f3f4f6;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -24,15 +19,1046 @@
   color: white;
 }
 
+.bgImage {
+  background-image: url('./bgImage.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main_container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.homepage_container {
+  display: flex;
+  width: 85%;
+  margin-top: 3.2rem;
+  /* background-color: #61dafb; */
+  height: 100vh;
+  flex-direction: column;
+}
+
+
+
+.homepage_img {
+  width: 100%;
+  display: flex;
+
+}
+
+.homepage_img img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0rem 0rem 1rem 1rem;
+  height: 30rem;
+  width: 100%;
+  filter: brightness(50%);
+  object-fit: cover;
+  object-position: 0 57%;
+}
+
+.homepage_img .overlay {
+  margin-top: 4rem;
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.3rem;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  color: white;
+}
+
+.homepage_img .overlay span {
+  font-size: 2.5rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.input-group {
+  margin-left: 5px;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.trendingHeader {
+  display: flex;
+  align-items: center;
+}
+
+.toggletrending {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trendingHeader span {
+
+  font-size: 1.8rem;
+  font-weight: 600;
+  background-image: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(144, 7, 7, 1) 49%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin: 0rem 1.5rem;
+  /* padding-bottom: 8px; */
+}
+
+.toggletrending input {
+  margin-top: 8px;
+}
+
+.trendingHeader .toggleText {
+  font-size: 1.5rem;
+  margin: 0.5rem 1rem;
+  /* background: rgb(131,58,180); */
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(29, 182, 253, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.trendingContainer{
+  display: flex;
+  height: 17rem;
+  width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.trendingMovieCard{
+  width: 12%;
+  height: 95%;
+  flex: 0 0 auto;
+  margin-right: 1.5rem;
+  
+}
+.trendingMovieCard img{ 
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 576px) {
+
+  /* CSS styles for small screens */
+  .homepage_img .overlay span {
+    font-size: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .homepage_img .overlay {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    font-size: 0.7rem;
   }
+
+  .homepage_container {
+    width: 100%;
+  }
+
+  .homepage_img img {
+    height: 20rem;
+  }
+
+.trendingHeader{
+  width: 100vw;
+}
+.trendingHeader span{
+  font-size: 1.9rem;
+  margin: 0.5rem 0.9rem;
+}
+.trendingHeader .toggleText{
+  font-size: 1.2rem;
+
+}
+
+}
+
+/* MultiSearch CSS */
+.multiSearch_container {
+  display: flex;
+  width: 65%;
+  margin-top: 3.2rem;
+  /* background-color: #61dafb; */
+  /* height: 100vh; */
+  flex-direction: column;
+}
+
+.multiSearch_card {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  margin-bottom: 1.3rem;
+  height: 18rem;
+  border-radius: 1rem;
+  box-shadow: 16px 13px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.multiSearch_image {
+  padding: 0;
+  height: 100%;
+  width: 25%;
+}
+
+.multiSearch_image img {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.multiSearch_info {
+  background: none;
+  height: 100%;
+  overflow: hidden;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  font-size: 1rem;
+  font-family: 'Hind Siliguri', sans-serif;
+  color: black;
+}
+
+.multiSearchMovieTitleOrName {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.multiSearchReleaseDateOrGender {
+  font-size: 0.9rem;
+}
+
+.multiSearchOverviewOrProfession {
+  font-size: 0.9rem;
+  margin: 0.3rem 0rem;
+}
+
+.multiSearchPopularity {
+  font-size: 0.9rem;
+  margin: 0.3rem 0rem;
+}
+
+.multiSearchPopularity span {
+  color: #e600ac;
+  font-size: 0.9rem
+}
+
+@media screen and (max-width: 576px) {
+
+  /* CSS styles for small screens */
+  .multiSearch_container {
+    /* background-color: red; */
+    width: 90vw;
+  }
+
+  .multiSearch_card {
+    height: 13rem;
+  }
+
+  .multiSearchOverviewOrProfession {
+    font-size: 0.7rem;
+  }
+
+  .multiSearchReleaseDateOrGender {
+    font-size: 0.7rem;
+  }
+
+  .multiSearch_info {
+    padding: 1rem;
+  }
+
+  .multiSearchMovieTitleOrName {
+    font-size: 1rem;
+  }
+
+  .multiSearchPopularity {
+    font-size: 0.7rem;
+  }
+
+  .multiSearchPopularity span {
+    font-size: 0.7rem;
+  }
+}
+
+/* Navbar CSS */
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0d0d;
+  height: 3.5rem;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+  /* font-family: 'Source Sans Pro', Arial, sans-serif; */
+  font-weight: bold;
+}
+
+.logoAndHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-container>img {
+  margin: 0.8rem;
+}
+
+.navLeftSide {
+  /* margin-left:auto; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.navRightSide {
+  margin-left: auto;
+}
+
+
+.title {
+  letter-spacing: 3px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 0rem 1rem; */
+  padding: 0.2rem 1rem;
+}
+
+
+.title span {
+  font-size: 1.3rem;
+}
+
+.other-NavComp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0rem 0.5rem;
+
+}
+
+.other-NavComp span {
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+  /* .navLeftSide {
+    display:none;
+  } */
+  .other-NavComp {
+    margin: 0rem 0rem;
+    margin-right: 0.2rem;
+  }
+
+  .title span {
+    font-size: 1rem;
+  }
+
+  .title {
+    padding: 0rem 0.3rem;
+    letter-spacing: 2px;
+  }
+
+  .other-NavComp span {
+    font-size: 0.8rem;
+  }
+
+}
+
+
+
+.banner-textContent {
+  color: white;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+.banner {
+  margin-top: 3.3rem;
+}
+
+
+
+/* styling card */
+.card-custom-css {
+  width: 15rem;
+  font-size: 12px;
+  margin: 12px 20px;
+  position: relative;
+  box-shadow: 13px 12px 11px 0px rgba(0, 0, 0, 0.1);
+
+}
+
+.card-custom-css>a {
+  position: absolute;
+  bottom: 5px;
+}
+
+.card-img-css {
+  height: 17rem;
+}
+
+.moviesCardContainer {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  padding-left: 3.5rem;
+}
+
+.movie {
+  margin: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and(max-width:500px) {
+  .banner-textContent {
+    color: red;
+  }
+
+  .title {
+    color: red;
+  }
+}
+
+/* FavPage */
+.fav-page {
+  margin: 6rem 4rem;
+}
+
+.genre-list {
+  margin: 0rem 2rem;
+}
+
+.rowImage {
+  height: 5rem;
+  width: 10rem;
+  margin: 0.3rem 1.5rem;
+}
+
+.sortIcon {
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* //moviepage */
+.indMoviePage {
+  margin-top: 4rem;
+  height: 100vh;
+  position: relative;
+  font-family: 'Hind Siliguri', sans-serif;
+
+}
+
+.indivMovieCard {
+  position: absolute;
+  margin: 8rem 0rem;
+  margin-left: 7rem;
+  width: 60rem;
+  height: 28rem;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  font-size: large;
+}
+
+.img {
+  width: 30%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.backdropPoster {
+  width: 100vw;
+  height: 100vh;
+  filter: brightness(40%);
+
+}
+
+.movie-info {
+  margin-left: 3rem;
+  padding: 0rem;
+}
+
+.overview {
+  font-size: 12px;
+}
+
+/* SEARCH COMPONENT */
+.search-page-container {
+  margin: 4rem 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+}
+
+.searchBox {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* transform:  translate(-50%,50%); */
+  background-color: #110c0cf6;
+  height: 50px;
+  border-radius: 50px;
+  padding: 10px;
+  width: 550px;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  margin-bottom: 3rem;
+}
+
+.searchButton {
+  color: white;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transition: 0.4s; */
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 50px;
+  width: 90%;
+  color: white;
+  text-indent: 25px;
+}
+
+.searchInput::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+.displaysearchedImages {
+  padding-top: 4rem;
+}
+
+.displaysearchedImages .card-custom-css {
+  height: 35rem;
+}
+
+
+/* Loader CSS */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: black;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+
+.movieByIdPage {
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Similar movies Section */
+
+.similarMoviesContainer {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  margin-top: 32%;
+  margin-left: 27.5rem;
+  height: 230px;
+  width: 800px;
+  z-index: 1;
+  background: white;
+  /* overflow: hidden; */
+  background-color: transparent;
+
+}
+
+.similarMovieCard {
+  width: 25%;
+  margin-left: 7px;
+}
+
+.similarMovieCard>img {
+  border-radius: 3px;
+  height: 100%;
+}
+
+.similarMovieNames {
+  color: white;
+  font-size: small;
+}
+
+.noMovieFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+
+.noMovieFound h1 {
+
+  font-size: 60px;
+  font-weight: 600;
+  background-image: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(144, 7, 7, 1) 49%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  ;
+
+}
+
+
+/* Login/Register Modal */
+.auth-form-container {
+  background: rgb(0, 0, 0, 0.7);
+  /* background-color: white; */
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  height: 35rem;
+  width: 27rem;
+  box-shadow: 18px 15px 12px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form-container,
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+@media screen and (min-width: 600px) {
+  .auth-form-container {
+    padding: 2rem;
+    /* border: 1px solid white; */
+    border-radius: 10px;
+
+  }
+}
+
+.auth-form-container>h2 {
+  color: rgba(255, 0, 0, 255);
+  align-self: center;
+}
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+  color: white;
+  font-size: 1rem;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+button {
+  border: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.link-btn {
+  background: none;
+  color: white;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.loginBtn {
+  width: 100%;
+  align-self: center;
+  margin: 1rem;
+  background-color: rgba(170, 0, 0, 0.9)
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(180, 0, 0, 0.9);
+  opacity: 0.8;
+  /* Firefox */
+  font-size: 0.9rem;
+}
+
+.closeIcon {
+  color: white;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+
+
+
+/* UserInfo dropdown */
+
+.userInfoBtn {
+  border: 1px solid red;
+  /* background-color: #666666; */
+  color: red;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 30%;
+  /* margin-top: 2px; */
+  border: 2px solid black;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Links inside the dropdown */
+.dropdown-content li {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.8rem;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content li:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  /* background-color: white; */
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: black;
+  transition: 0.7s;
+}
+
+.menu-item:hover .drop-menu {
+  display: block;
+}
+
+/* Watchlist */
+.containerWatchlist {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container {
+  margin-top: 3rem;
+  display: flex;
+  /* background-color: red; */
+  width: 75vw;
+  row-gap: 1rem;
+  flex-direction: column;
+}
+
+.grid-item {
+  width: 100%;
+  /* background-color: antiquewhite; */
+  margin-bottom: 1rem;
+}
+
+.watchlistHeader {
+  display: flex;
+  height: 10rem;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+}
+
+.watchlistHeader h1,
+h4 {
+  align-self: center;
+  font-size: 60px;
+  font-weight: 600;
+  background-image: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(144, 7, 7, 1) 49%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  ;
+}
+
+.watchlist_movie {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  margin-bottom: 1.3rem;
+  height: 18rem;
+  border-radius: 1rem;
+  box-shadow: 16px 13px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.watchList_image {
+  padding: 0;
+  height: 100%;
+  width: 25%;
+}
+
+.watchList_image img {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.watchList_info {
+  background: none;
+  height: 100%;
+  overflow: hidden;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  font-size: 1rem;
+  font-family: 'Hind Siliguri', sans-serif;
+  color: black;
+}
+
+.watchListOverview {
+  font-size: 0.9rem;
+  margin: 0.3rem 0rem;
+}
+
+.watchlistReleaseDate {
+  font-size: 0.9rem;
+}
+
+.watchListMovieTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.watchlistIcons {
+  margin: 0.4rem 0rem;
+}
+
+.watchlistIcons i {
+  margin: 0rem 0.5rem;
+}
+
+.watchlistIcons i:hover {
+  color: red;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.favIcon i:hover {
+  color: #ff3399;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.watchlistIcon i:hover {
+  color: #ff6600;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 576px) {
+
+  /* CSS styles for small screens */
+  .grid-container {
+    /* background-color: red; */
+    width: 90vw;
+  }
+
+  .watchlist_movie {
+    height: 13rem;
+  }
+
+  .watchListOverview {
+    font-size: 0.7rem;
+  }
+
+  .watchlistReleaseDate {
+    font-size: 0.7rem;
+  }
+
+  .watchList_info {
+    padding: 1rem;
+  }
+
+  .watchListMovieTitle {
+    font-size: 1rem;
+
+  }
+}
+
+/* Toggle Switch */
+
+.toggle {
+  --width: 55px;
+  --height: calc(var(--width) / 2);
+  --border-radius: calc(var(--height) / 2);
+
+  display: inline-block;
+  cursor: pointer;
+}
+
+.toggle__input {
+  display: none;
+}
+
+.toggle__fill {
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background: #dddddd;
+  transition: background 0.2s;
+}
+
+.toggle__fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--height);
+  width: var(--height);
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius);
+  transition: transform 0.2s;
+}
+
+.toggle__input:checked~.toggle__fill {
+  background: #009578;
+}
+
+.toggle__input:checked~.toggle__fill::after {
+  transform: translateX(var(--height));
+}
+
+.movieNotFoundContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
 }
