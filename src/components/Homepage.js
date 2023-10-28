@@ -36,7 +36,8 @@ export default function HomePage() {
       )
       .then((response) => {
         setMultiSearchState(response.data.results);
-        // console.log(globalsearchParams.get('query'));
+
+        // console.log(globalsearchParams.get("query"));
       })
       .catch((err) => {
         console.log(err.message);
